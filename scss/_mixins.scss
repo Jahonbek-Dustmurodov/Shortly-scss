@@ -1,0 +1,61 @@
+@mixin list-unstyled {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+@mixin flexbox ($display: flex, $direction:column, $justify:space-between, $align:center) {
+  display: $display;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin link-unstyled {
+  text-decoration-line: none;
+}
+
+@mixin transition ($property) {
+  transition: $property 0.3s linear;
+}
+
+@mixin mobile-first ($min-width: 350px) {
+
+  @media only screen and (min-width: $min-width) {
+    @content;
+  }
+
+}
+
+@mixin mini-tablet ($min-width: 550px) {
+
+  @media only screen and (min-width: $min-width) {
+    @content;
+  }
+
+}
+
+@mixin tablet ($min-width: 700px) {
+
+  @media only screen and (min-width: $min-width) {
+    @content;
+  }
+
+}
+
+@mixin average-tablet ($min-width: 800px) {
+
+  @media only screen and (min-width: $min-width) {
+    @content;
+  }
+
+}
+
+@mixin mini-desktop ($min-width: 1000px) {
+
+  @media only screen and (min-width: $min-width) {
+    @content;
+  }
+
+}

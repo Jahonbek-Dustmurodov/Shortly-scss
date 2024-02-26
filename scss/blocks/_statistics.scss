@@ -1,0 +1,332 @@
+@use "../mixins" as m;
+
+.statistics {
+  padding-top: 160px;
+  background-color: #eff1f7;
+  background-image: url("../../images/background.svg");
+  background-size: 1440px 285px;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+
+.statistics__wrapper {
+  @include m.flexbox($justify:null);
+  row-gap: 60px;
+}
+
+.statistics__title-wrapper {
+  @include m.flexbox($justify:null);
+}
+
+.statistics__title {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 23px;
+  font-weight: var(--main-title-font-weight);
+  line-height: 35px;
+  letter-spacing: -0.7px;
+  text-align: center;
+  color: var(--main-title-color);
+}
+
+.statistics__text {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: var(--main-footer-font-size);
+  font-weight: var( --main-text-font-weight);
+  line-height: 28px; 
+  letter-spacing: 0.109px;
+  text-align: center;
+  color: var(--main-text-color);
+}
+
+.statistics__list {
+  position: relative;
+  @include m.flexbox($justify:null);
+  @include m.list-unstyled;
+  row-gap: 92px;
+}
+
+.statistics__list::before {
+  position: absolute;
+  display: block;
+  width: 8px;
+  height: 815px;
+  content: "";
+  background-color: var(--main-link-background-color);
+}
+
+.statistics__item {
+  position: relative;
+  @include m.flexbox($justify:null);
+  padding: 77px 32px 41px;
+  z-index: 1;
+  background-color: var( --main-link-color);
+  border-radius: 5px;
+}
+
+.statistics__item:nth-child(2) {
+  padding-bottom: 32px;
+}
+
+.statistics__item::before {
+  position: absolute;
+  display: block;
+  width: 88px;
+  height: 88px;
+  top: -44px;
+  content: "";
+  border-radius: 50%;
+  background-color: var(--main-color);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.statistics__item:first-child::before {
+  background-image: url(../../images/brand.svg);
+  background-size: 40px 40px;
+}
+
+.statistics__item:nth-child(2)::before {
+  background-image: url("../../images/detailed.svg");
+  background-size: 40px 40px;
+}
+
+.statistics__item:nth-child(3)::before {
+  background-image: url("../../images/customizable.svg");
+  background-size: 48px 48px;
+}
+
+.statistics__item-wrapper {
+  min-width: 168px;
+  max-width: 263px;
+  width: 100%;
+}
+
+.statistics__item-title {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 17px;
+  font-weight: var(--main-title-font-weight);
+  line-height: 25px;
+  text-align: center;
+  color: var(--main-title-color);
+}
+
+.statistics__item-text {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 11px;
+  font-weight: var(--main-text-font-weight);
+  line-height: 20px;
+  text-align: center;
+  color: var(--main-text-color);
+}
+
+.statistics__article {
+  @include m.flexbox($justify:null);
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.statistics__article-title {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 21px;
+  font-weight: var(--main-title-font-weight);
+  line-height: 40px;
+  letter-spacing: -0.7px;
+  text-align: center;
+  color: var(--main-link-color);
+}
+
+.statistics__article-link {
+  display: inline-block;
+  padding: 14px 40px 12px;
+  font-size: 14px;
+  font-weight: var(--main-title-font-weight);
+  line-height: 23px;
+  @include m.link-unstyled;
+  border-radius: 28px;
+  background-color: var(--main-link-background-color);
+  color: var(--main-link-color);
+  @include m.transition ($property:background-color);
+}
+
+.statistics__article-link:hover {
+  background-color: #9ae3e3;
+}
+
+@include m.mobile-first {
+  
+  
+  .statistics {
+    background-size: 1440px 300px;
+  }
+  
+  .statistics__wrapper {
+    row-gap: 80px;
+  }
+
+  .statistics__title-wrapper {
+    max-width: 327px;
+  }
+  
+  .statistics__title {
+    font-size: 28px;
+    line-height: 48px;
+  }
+  
+  .statistics__text {
+    margin-bottom: 12px;
+  }
+  
+  .statistics__item-title {
+    font-size: var( --main-services-title-font-size);
+    line-height: 33px;
+  }  
+  
+  .statistics__item-text {
+    font-size: var( --main-header-font-size);
+    line-height: 26px; 
+  }
+  
+  .statistics__article-title {
+    font-size: 26px;
+    line-height: 48px; 
+  }
+
+  .statistics__article-link {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  
+}
+
+@media only screen and (min-width: 360px) {
+   
+  .statistics__article-title {
+    font-size: 28px;
+  }
+
+}
+
+@include m.mini-tablet {
+
+  .statistics {
+    background-size: 1440px 300px;
+  }
+  
+  .statistics__wrapper {
+    row-gap: 100px;
+  }
+  
+  .statistics__title-wrapper {
+    max-width: 490px;
+  }
+
+  .statistics__title {
+    font-size: 32px;
+    letter-spacing: -1px;
+  }
+  
+  .statistics__article-title {
+    font-size: 35px;
+  }
+}
+
+@include m.average-tablet {
+  
+  .statistics {
+    padding-top: 204px;
+    background-size: 1440px 250px;
+  }
+  
+  .statistics__title-wrapper {
+    max-width: 540px;
+  }
+  
+  .statistics__title {
+    margin-bottom: 18px;
+    font-size: 40px;
+    line-height: 48px;
+    letter-spacing: -1px;
+  }
+  
+  .statistics__text {
+    margin-bottom: 0;
+    font-size: 18px;
+    line-height: 32px; 
+  }
+  
+  .statistics__list {
+    @include m.flexbox ($display:null, $direction:row,$align:start);
+    column-gap: 30px;
+  }
+  
+  .statistics__list::before {
+    margin-top: 140px;
+    width: 755px;
+    height: 8px;
+  }
+
+  .statistics__item {
+    align-items: start;
+  }
+  
+  .statistics__item:nth-child(2) {
+    top: 44px;
+    padding-bottom: 41px;
+  }
+
+  .statistics__item:nth-child(3) {
+    top: 88px;
+  }
+  
+  .statistics__item-wrapper {
+    align-items: start;
+    max-width: 286px;
+  }
+  
+  .statistics__item-title {
+    font-size: 17px;
+    text-align: start;
+  }
+  
+  .statistics__item-text {
+    font-size: 12px;
+    line-height: 20px;
+    text-align: start;
+  }
+  
+  .statistics__article {
+    margin-top: 108px;
+    padding-top: 57px;
+    padding-bottom: 57px;
+  }
+  
+  .statistics__article-title {
+    margin-bottom: 32px;
+    font-size: 40px;
+    line-height: 48px;
+  }
+}
+
+@include m.mini-desktop {
+
+  .statistics__list::before {
+    margin-top: 152px;
+    width: 950px;
+    height: 8px;
+  }
+
+  .statistics__item-title {
+    font-size: 22px;
+  }
+
+  .statistics__item-text {
+    font-size: 15px;
+    line-height: 26px;
+  }
+
+}

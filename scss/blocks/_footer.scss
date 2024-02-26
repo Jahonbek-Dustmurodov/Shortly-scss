@@ -1,0 +1,140 @@
+@use "../mixins" as m;
+
+.site-footer {
+  padding-top: 56px;
+  padding-bottom: 56px;
+  background-color: #232127;
+}
+
+.site-footer__wrapper {
+  @include m.flexbox ($justify:null);
+}
+
+.site-logo {
+  margin-bottom: 47px;
+  @include m.link-unstyled;
+}
+
+.site-logo__img {
+  width: 120px;
+  height: 33px;
+}
+
+.contact {
+  @include m.flexbox ($justify:null);
+  margin-bottom: 38px;
+}
+
+.contact__title {
+  margin-top: 0;
+  margin-bottom: 22px;
+  font-size: var( --main-footer-font-size);
+  font-weight: var(--main-title-font-weight);
+  line-height: 24px;
+  letter-spacing: -0.25px;
+  text-align: center;
+  color: var(--main-link-color);
+}
+
+.contact__list {
+  @include m.list-unstyled;
+  @include m.flexbox ($justify:null);
+  row-gap: 10px;
+}
+
+.contact__link {
+  font-size: var( --main-header-font-size);
+  font-weight: var(  --main-text-font-weight);
+  line-height: 23px;
+  letter-spacing: -0.234px;
+  @include m.link-unstyled;
+  color: #bfbfbf;
+  @include m.transition ($property:color);
+}
+
+.contact__link:hover {
+  color: var(--main-link-background-color);
+}
+
+.social-list {
+  @include m.flexbox ($direction:null, $justify:null);
+  @include m.list-unstyled;
+  margin-top: 8px;
+  column-gap: 24px;
+}
+
+.social-list__img {
+  color: var(--main-link-color);
+  @include m.transition ($property:color);
+}
+
+.social-list__img:hover {
+  color: var(--main-link-background-color);
+}
+
+@include m.mini-tablet {
+
+  .site-footer__wrapper {
+    @include m.flexbox ($display:null, $direction:row,$align:start);
+    column-gap: 35px;
+    flex-wrap: wrap;
+  }
+
+  .contact {
+    margin-bottom: 0;
+    align-items: start;
+  }
+
+  .contact__list {
+    align-items: start;
+  }
+
+  .social-list {
+    margin-top: 40px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+}
+
+@include m.average-tablet {
+
+  .site-footer {
+    padding-top: 72px;
+    padding-bottom: 70px;
+  }
+
+  .site-footer__wrapper {
+    column-gap: 0;
+  }
+
+  .contact {
+    margin-right: 50px;
+  }
+
+  .site-footer__link-wrapper--additional {
+    margin-left: auto;
+  } 
+
+  .social-list {
+    margin-top: 0px;
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+
+@include m.mini-desktop {
+
+  .contact {
+    margin-right: 106px;
+  }
+
+  .site-footer__link-wrapper--additional {
+    margin-right: 68px;
+  } 
+
+  .site-footer__link-wrapper--addition {
+    margin-right: 101px;
+  }
+}
